@@ -135,6 +135,17 @@ $theme-colors: (
   "dark":       $dark
 ) !default;
 
+$theme-colors-bg: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) !default;
+
 $theme-colors-text: (
   "primary":    $primary,
   "secondary":  $secondary,
@@ -157,6 +168,7 @@ $colors: (
   "black":      $black,
   "white":      $white,
 ) !default;
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------
 ####################################################################### Border ####################################################################
@@ -227,50 +239,41 @@ $card-group-margin:                 $grid-gutter-width * .5 !default;
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
-$font-family-base:            var(--#{$prefix}font-sans-serif) !default;
-$font-family-code:            var(--#{$prefix}font-monospace) !default;
+$font-family:            var(--#{$prefix}font-sans-serif) !default;
 
-$font-size-root:              null !default;
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-sm:                $font-size-base * .875 !default;
-$font-size-lg:                $font-size-base * 1.25 !default;
+$fsz-base:              1rem !default; // Assumes the browser default, typically `16px`
+$fsz-sm:                $fsz-base * .875 !default;
+$fsz-lg:                $fsz-base * 1.25 !default;
 
-$font-weight-lighter:         lighter !default;
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-medium:          500 !default;
-$font-weight-semibold:        600 !default;
-$font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$fw-lighter:         lighter !default;
+$fw-light:           300 !default;
+$fw-normal:          400 !default;
+$fw-medium:          500 !default;
+$fw-semibold:        600 !default;
+$fw-bold:            700 !default;
+$fw-bolder:          bolder !default;
 
-$font-weight-base:            $font-weight-normal !default;
+$fw-base:            $fw-normal !default;
 
-$line-height-base:            1.5 !default;
-$line-height-sm:              1.25 !default;
-$line-height-lg:              2 !default;
+$lh-base:            1.5 !default;
+$lh-sm:              1.25 !default;
+$lh-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-fsz:                $fsz-base * 2.5 !default;
+$h2-fsz:                $fsz-base * 2 !default;
+$h3-fsz:                $fsz-base * 1.75 !default;
+$h4-fsz:                $fsz-base * 1.5 !default;
+$h5-fsz:                $fsz-base * 1.25 !default;
+$h6-fsz:                $fsz-base !default;
 
 $font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
+  1: $h1-fsz,
+  2: $h2-fsz,
+  3: $h3-fsz,
+  4: $h4-fsz,
+  5: $h5-fsz,
+  6: $h6-fsz
 ) !default;
-
-$headings-margin-bottom:      $spacer * .5 !default;
-$headings-font-family:        null !default;
-$headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
-$headings-line-height:        1.2 !default;
-$headings-color:              inherit !default;
 
 $display-font-sizes: (
   1: 5rem,
@@ -280,11 +283,6 @@ $display-font-sizes: (
   5: 3rem,
   6: 2.5rem
 ) !default;
-
-$display-font-family: null !default;
-$display-font-style:  null !default;
-$display-font-weight: 300 !default;
-$display-line-height: $headings-line-height !default;
 
 $small-font-size:             .875em !default;
 
