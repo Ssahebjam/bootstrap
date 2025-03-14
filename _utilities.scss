@@ -56,22 +56,6 @@ $utilities: map-merge(
       class: d,
       values: inline inline-block block grid inline-grid table table-row table-cell flex inline-flex none
     ),
-    "shadow": (
-      property: box-shadow,
-      class: shadow,
-      values: (
-        null: var(--#{$prefix}box-shadow),
-        sm: var(--#{$prefix}box-shadow-sm),
-        lg: var(--#{$prefix}box-shadow-lg),
-        none: none,
-      )
-    ),
-    "focus-ring": (
-      css-var: true,
-      css-variable-name: focus-ring-color,
-      class: focus-ring,
-      values: map-loop($theme-colors-rgb, rgba-css-var, "$key", "focus-ring")
-    ),
     "position": (
       property: position,
       values: static relative absolute fixed sticky

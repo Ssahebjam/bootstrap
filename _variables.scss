@@ -1,131 +1,72 @@
-$white:         #fff;
-$black:         #000;
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Vars ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-$primary:       $blue !default;
-$secondary:     $indigo !default;
-$success:       $purple !default;
-$info:          $pink !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $white !default;
-$dark:          $black !default;
+ $variable-prefix: bs- !default;
 
-$body-color: $white;
+ $white: #fff;             
+ $black: #000;             
+ $blue: #0d6efd;           
+ $purple: #6f42c1;         
+ $pink: #d63384;           
+ $red: #dc3545;            
+ $orange: #fd7e14;         
+ $yellow: #ffc107;         
+ $green: #198754;                                         
 
-$theme-colors-text: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark,
-) !default;
+ $primary: $blue;
+ $secondary: $black;
+ $success: $purple;
+ $info: $pink;
+ $warning: $yellow;
+ $danger: $red;
+ $light: $white;
+ $dark: $black;
 
-$colors: (
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "black":      $black,
-  "white":      $white,
-) !default;
+ $body-color:                red !default;
+ $body-bg:                   $white !default;
 
+ $body-secondary-color:      rgba($body-color, .75) !default;
+ $body-secondary-bg:         red;
 
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-) !default;
-// scss-docs-end theme-colors-map
+ $text-muted:                  var(--#{$variable-prefix}secondary-color) !default;
 
-// scss-docs-start theme-text-variables
-$enable-rounded:              true !default;
-$enable-shadows:              false !default;
-$enable-gradients:            false !default;
-$enable-transitions:          true !default;
-$enable-reduced-motion:       true !default;
-$enable-smooth-scroll:        true !default;
-$enable-grid-classes:         true !default;
-$enable-container-classes:    true !default;
-$enable-cssgrid:              false !default;
-$enable-button-pointers:      true !default;
-$enable-rfs:                  true !default;
-$enable-validation-icons:     true !default;
-$enable-negative-margins:     true;
-$enable-deprecation-messages: true !default;
-$enable-important-utilities:  true !default;
+ $body-fsz: 1rem !default;
+ $body-fw: 1rem !default;
+ $body-flh: 1rem !default;
 
-$enable-dark-mode:            true !default;
-$color-mode-type:             data !default; // `data` or `media-query`
+ $border-width:   1px !default;
+ $prefix:                      $variable-prefix !default;
 
-// Prefix for :root CSS variables
+ $grid-columns:                12 !default;
+ $grid-gutter-width:           1.5rem !default;
+ $grid-row-columns:            6 !default;
 
-$variable-prefix:             bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
-$prefix:                      $variable-prefix !default;
+ $spacer: 1rem !default;
 
-// scss-docs-start spacer-variables-maps
-$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-) !default;
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Features ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-$position-values: (
-  0: 0,
-  50: 50%,
-  100: 100%
-) !default;
+ $enable-negative-margins:     true;
 
-$body-text-align:           null !default;
-$body-color:                red !default;
-$body-bg:                   $white !default;
+ $enable-smooth-scroll:        true !default;
+ $enable-grid-classes:         true !default;
+ $enable-container-classes:    true !default;
+ $enable-cssgrid:              false !default;
+ $enable-button-pointers:      true !default;
+ $enable-rfs:                  true !default;
+ $enable-validation-icons:     true !default;
+ $enable-deprecation-messages: true !default;
+ $enable-important-utilities:  true !default;
+ 
+ $enable-dark-mode:            true !default;
+ $color-mode-type:             data !default;
+ $pre-color:                   null !default;
 
-$body-secondary-color:      rgba($body-color, .75) !default;
-$body-secondary-bg:         red;
-
-$body-tertiary-color:       rgba($body-color, .5) !default;
-$body-tertiary-bg:          red !default;
-
-$body-emphasis-color:       $black !default;
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-) !default;
-
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Containers ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 $container-max-widths: (
   sm: 540px,
@@ -137,13 +78,92 @@ $container-max-widths: (
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
-$grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
-$grid-row-columns:            6 !default;
-
 $container-padding-x: $grid-gutter-width !default;
 
-$border-width:                1px !default;
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Spacers And Gutters ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+ @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+ @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+ $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
+
+ $gutters: $spacers !default;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+#######################################################################  Position  ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+ $body-text-align:           null !default;
+
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Color Maps ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) !default;
+
+$theme-colors-text: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+) !default;
+
+$colors: (
+  "blue":       $blue,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "black":      $black,
+  "white":      $white,
+) !default;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Border ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+$enable-rounded: true !default;
+
 $border-widths: (
   1: 1px,
   2: 2px,
@@ -151,9 +171,9 @@ $border-widths: (
   4: 4px,
   5: 5px
 ) !default;
-$border-style:                solid !default;
-$border-color:                red !default;
-$border-color-translucent:    rgba($black, .175) !default;
+
+$border-style: solid !default;
+$border-color: red !default;
 
 $border-radius:               .375rem !default;
 $border-radius-sm:            .25rem !default;
@@ -162,12 +182,47 @@ $border-radius-xl:            1rem !default;
 $border-radius-xxl:           2rem !default;
 $border-radius-pill:          50rem !default;
 
-$border-radius-2xl:           $border-radius-xxl !default; // Deprecated in v5.3.0
+$border-radius-2xl:           $border-radius-xxl !default;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Shadow ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+$enable-shadows:              false !default;
 
 $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
+
+$card-box-shadow:                   null !default;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Card ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+$card-spacer-y:                     $spacer !default;
+$card-spacer-x:                     $spacer !default;
+$card-title-spacer-y:               $spacer * .5 !default;
+$card-title-color:                  null !default;
+$card-subtitle-color:               null !default;
+$card-border-width:                 var(--#{$prefix}border-width) !default;
+$card-border-color:                 var(--#{$prefix}border-color-translucent) !default;
+$card-border-radius:                var(--#{$prefix}border-radius) !default;
+$card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
+$card-cap-padding-y:                $card-spacer-y * .5 !default;
+$card-cap-padding-x:                $card-spacer-x !default;
+$card-cap-bg:                       rgba(var(--#{$prefix}body-color-rgb), .03) !default;
+$card-cap-color:                    null !default;
+$card-height:                       null !default;
+$card-color:                        null !default;
+$card-bg:                           var(--#{$prefix}body-bg) !default;
+$card-img-overlay-padding:          $spacer !default;
+$card-group-margin:                 $grid-gutter-width * .5 !default;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Font ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
@@ -231,14 +286,13 @@ $display-font-style:  null !default;
 $display-font-weight: 300 !default;
 $display-line-height: $headings-line-height !default;
 
-$lead-font-size:              $font-size-base * 1.25 !default;
-$lead-font-weight:            300 !default;
-
 $small-font-size:             .875em !default;
 
 $sub-sup-font-size:           .75em !default;
 
-$text-muted:                  var(--#{$prefix}secondary-color) !default; // Deprecated in 5.3.0
+/*-------------------------------------------------------------------------------------------------------------------------------------------------
+####################################################################### Z-index ####################################################################
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
@@ -258,29 +312,3 @@ $zindex-levels: (
   2: 2,
   3: 3
 ) !default;
-
-$card-spacer-y:                     $spacer !default;
-$card-spacer-x:                     $spacer !default;
-$card-title-spacer-y:               $spacer * .5 !default;
-$card-title-color:                  null !default;
-$card-subtitle-color:               null !default;
-$card-border-width:                 var(--#{$prefix}border-width) !default;
-$card-border-color:                 var(--#{$prefix}border-color-translucent) !default;
-$card-border-radius:                var(--#{$prefix}border-radius) !default;
-$card-box-shadow:                   null !default;
-$card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
-$card-cap-padding-y:                $card-spacer-y * .5 !default;
-$card-cap-padding-x:                $card-spacer-x !default;
-$card-cap-bg:                       rgba(var(--#{$prefix}body-color-rgb), .03) !default;
-$card-cap-color:                    null !default;
-$card-height:                       null !default;
-$card-color:                        null !default;
-$card-bg:                           var(--#{$prefix}body-bg) !default;
-$card-img-overlay-padding:          $spacer !default;
-$card-group-margin:                 $grid-gutter-width * .5 !default;
-
-$pre-color:                         null !default;
-
-$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
-
-$gutters: $spacers !default;

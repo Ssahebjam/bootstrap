@@ -3,7 +3,7 @@
     @content;
   }
 }
-$rfs-base-value: 1.25rem !default;
+$rfs-base-value: $body-fsz !default;
 $rfs-unit: rem !default;
 
 @if $rfs-unit != rem and $rfs-unit != px {

@@ -3,11 +3,9 @@
   @each $color, $value in $colors {
     --#{$prefix}#{$color}: #{$value};
   }
-
   @each $color, $value in $theme-colors {
     --#{$prefix}#{$color}: #{$value};
   }
-
   @each $color, $value in $theme-colors-text {
     --#{$prefix}#{$color}-text-emphasis: #{$value};
   }
@@ -20,9 +18,6 @@
   --#{$prefix}body-bg: #{$body-bg};
   --#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
 
-  --#{$prefix}emphasis-color: #{$body-emphasis-color};
-  --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color)};
-
   --#{$prefix}secondary-color: #{$body-secondary-color};
   --#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color)};
   --#{$prefix}secondary-bg: #{$body-secondary-bg};
@@ -31,7 +26,6 @@
   --#{$prefix}border-width: #{$border-width};
   --#{$prefix}border-style: #{$border-style};
   --#{$prefix}border-color: #{$border-color};
-  --#{$prefix}border-color-translucent: #{$border-color-translucent};
 
   --#{$prefix}border-radius: #{$border-radius};
   --#{$prefix}border-radius-sm: #{$border-radius-sm};
