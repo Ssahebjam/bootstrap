@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.87.0"
+  },
+  "scripts": {
+    "sass": "sass --watch src/stylesheet.scss:dist/stylesheet.css",
+    "dev": "npm-run-all --parallel sass serve",
+    "serve": "live-server . dist"
+  }
+}
