@@ -5,7 +5,7 @@
     "sass": "^1.87.0"
   },
   "scripts": {
-    "sass": "sass --watch src/stylesheet.scss:dist/stylesheet.css",
+    "sass": "sass --watch src/bootstrap.scss:dist/stylesheet.css",
     "dev": "npm-run-all --parallel sass serve",
     "serve": "live-server . dist"
   }
